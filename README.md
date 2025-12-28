@@ -2,6 +2,8 @@
 
 A sophisticated, enterprise-grade SaaS platform for comprehensive SEO audits, brand visibility analysis, and strategic keyword intelligence. Built with cutting-edge web technologies and designed with a professional, data-focused interface.
 
+Live Deployment:https://kasparro-frontend-abhishek-s-vercel.vercel.app/
+
 ![Kasparro Platform](https://via.placeholder.com/1200x630?text=Kasparro+AI-SEO+Platform)
 
 ## Features
