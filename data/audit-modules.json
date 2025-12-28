@@ -1,0 +1,362 @@
+{
+  "modules": [
+    {
+      "id": "content-intelligence",
+      "name": "Content Intelligence",
+      "description": "Analyze content quality, structure, and AI-readiness",
+      "icon": "BookOpen",
+      "score": {
+        "score": 78,
+        "trend": "up",
+        "lastWeekChange": 5,
+        "status": "good"
+      },
+      "keyInsights": [
+        {
+          "title": "Strong semantic structure",
+          "description": "Your content demonstrates clear topic hierarchy and semantic relationships",
+          "status": "excellent"
+        },
+        {
+          "title": "Adequate depth coverage",
+          "description": "Most topic areas covered with reasonable depth, but some opportunities exist",
+          "status": "good"
+        },
+        {
+          "title": "Moderate use of structured data",
+          "description": "Schema markup present but could be expanded to more content types",
+          "status": "fair"
+        }
+      ],
+      "issues": [
+        {
+          "title": "Missing topic clusters",
+          "severity": "medium",
+          "description": "5 key topics lack comprehensive supporting content"
+        },
+        {
+          "title": "Inconsistent terminology",
+          "severity": "low",
+          "description": "Some variations in how key concepts are described across pages"
+        }
+      ],
+      "recommendations": [
+        {
+          "title": "Expand topic clusters",
+          "description": "Create 3-5 comprehensive guides for underrepresented topics",
+          "priority": "high",
+          "estimatedImpact": "+12-15% AI visibility"
+        },
+        {
+          "title": "Standardize terminology",
+          "description": "Create internal glossary and apply consistently",
+          "priority": "medium",
+          "estimatedImpact": "+5% semantic clarity"
+        },
+        {
+          "title": "Add FAQ sections",
+          "description": "Structure common questions into FAQ formats for better retrieval",
+          "priority": "medium",
+          "estimatedImpact": "+8% featured moment visibility"
+        }
+      ]
+    },
+    {
+      "id": "visibility-analysis",
+      "name": "Visibility Analysis",
+      "description": "Track presence and mentions across AI search platforms",
+      "icon": "Eye",
+      "score": {
+        "score": 62,
+        "trend": "down",
+        "lastWeekChange": -3,
+        "status": "fair"
+      },
+      "keyInsights": [
+        {
+          "title": "ChatGPT visibility moderate",
+          "description": "Domain appears in approximately 35% of ChatGPT responses for industry keywords",
+          "status": "good"
+        },
+        {
+          "title": "Gemini presence weak",
+          "description": "Lower representation compared to competitors in Google Gemini",
+          "status": "poor"
+        },
+        {
+          "title": "Perplexity citations improving",
+          "description": "Slight improvement in citation frequency over past month",
+          "status": "good"
+        }
+      ],
+      "issues": [
+        {
+          "title": "Low Gemini visibility",
+          "severity": "critical",
+          "description": "Only cited in 18% of Gemini responses vs 45% for top competitor"
+        },
+        {
+          "title": "Limited breadth",
+          "severity": "high",
+          "description": "Only visible for primary keywords, not long-tail variations"
+        }
+      ],
+      "recommendations": [
+        {
+          "title": "Increase content diversity",
+          "description": "Create content targeting long-tail and question-based keywords",
+          "priority": "critical",
+          "estimatedImpact": "+25% keyword coverage"
+        },
+        {
+          "title": "Improve indexing signals",
+          "description": "Enhance technical SEO and link profile for better AI platform indexing",
+          "priority": "high",
+          "estimatedImpact": "+40% Gemini visibility"
+        }
+      ]
+    },
+    {
+      "id": "eeat-scoring",
+      "name": "EEAT Scoring",
+      "description": "Evaluate Expertise, Experience, Authority, and Trust",
+      "icon": "Award",
+      "score": {
+        "score": 84,
+        "trend": "up",
+        "lastWeekChange": 8,
+        "status": "excellent"
+      },
+      "keyInsights": [
+        {
+          "title": "Strong authority signals",
+          "description": "Good domain age, established backlink profile, and consistent publishing",
+          "status": "excellent"
+        },
+        {
+          "title": "Credible authors",
+          "description": "Author bios and credentials clearly established on key content",
+          "status": "excellent"
+        },
+        {
+          "title": "Trust indicators present",
+          "description": "Customer testimonials, certifications, and third-party validation visible",
+          "status": "good"
+        }
+      ],
+      "issues": [
+        {
+          "title": "Limited author expertise signals",
+          "severity": "low",
+          "description": "Some author pages lack detailed expertise credentials"
+        }
+      ],
+      "recommendations": [
+        {
+          "title": "Enhance author credentials",
+          "description": "Add detailed expertise profiles and achievements to author pages",
+          "priority": "medium",
+          "estimatedImpact": "+8% EEAT score"
+        }
+      ]
+    },
+    {
+      "id": "keyword-coverage",
+      "name": "Keyword Coverage",
+      "description": "Non-branded keyword positioning and gap analysis",
+      "icon": "Target",
+      "score": {
+        "score": 71,
+        "trend": "stable",
+        "lastWeekChange": 1,
+        "status": "good"
+      },
+      "keyInsights": [
+        {
+          "title": "Solid core coverage",
+          "description": "78% of primary industry keywords covered with relevant content",
+          "status": "good"
+        },
+        {
+          "title": "Long-tail underrepresented",
+          "description": "Only 42% coverage of long-tail and question-based keywords",
+          "status": "fair"
+        },
+        {
+          "title": "Emerging topic gaps",
+          "description": "New market trends not yet addressed in content",
+          "status": "poor"
+        }
+      ],
+      "issues": [
+        {
+          "title": "Missing long-tail content",
+          "severity": "high",
+          "description": "1,240+ relevant long-tail keywords without dedicated content"
+        },
+        {
+          "title": "Competitive gaps",
+          "severity": "medium",
+          "description": "12 keywords with high AI visibility potential not covered"
+        }
+      ],
+      "recommendations": [
+        {
+          "title": "Develop long-tail content strategy",
+          "description": "Create targeted content for top 200 long-tail keywords",
+          "priority": "high",
+          "estimatedImpact": "+35% keyword coverage"
+        },
+        {
+          "title": "Address competitive gaps",
+          "description": "Create comprehensive guides for high-potential keywords",
+          "priority": "high",
+          "estimatedImpact": "+18% visibility in competitive terms"
+        }
+      ]
+    },
+    {
+      "id": "competitive-landscape",
+      "name": "Competitive Landscape",
+      "description": "AI-era competitor benchmarking and positioning",
+      "icon": "TrendingUp",
+      "score": {
+        "score": 55,
+        "trend": "down",
+        "lastWeekChange": -7,
+        "status": "fair"
+      },
+      "keyInsights": [
+        {
+          "title": "You rank 3rd in market",
+          "description": "In visibility metrics across AI platforms in your segment",
+          "status": "fair"
+        },
+        {
+          "title": "Leader has 2.3x visibility",
+          "description": "Top competitor appears in significantly more AI responses",
+          "status": "poor"
+        },
+        {
+          "title": "Content depth varies",
+          "description": "Competitors averaging 35% more comprehensive content",
+          "status": "fair"
+        }
+      ],
+      "issues": [
+        {
+          "title": "Content volume disadvantage",
+          "severity": "high",
+          "description": "Publishing 40% less content than leading competitor"
+        },
+        {
+          "title": "Lower citation frequency",
+          "severity": "high",
+          "description": "Cited less frequently in AI-generated responses"
+        }
+      ],
+      "recommendations": [
+        {
+          "title": "Increase publishing velocity",
+          "description": "Scale content production to match competitor output",
+          "priority": "high",
+          "estimatedImpact": "+20% competitive visibility"
+        },
+        {
+          "title": "Improve content quality",
+          "description": "Focus on depth and comprehensiveness vs competitors",
+          "priority": "high",
+          "estimatedImpact": "+15% citation frequency"
+        }
+      ]
+    },
+    {
+      "id": "brand-safety",
+      "name": "Brand Safety",
+      "description": "Monitor mentions, sentiment, and brand protection",
+      "icon": "Shield",
+      "score": {
+        "score": 89,
+        "trend": "up",
+        "lastWeekChange": 12,
+        "status": "excellent"
+      },
+      "keyInsights": [
+        {
+          "title": "Positive sentiment dominant",
+          "description": "92% of AI-generated mentions are neutral to positive",
+          "status": "excellent"
+        },
+        {
+          "title": "Misinformation minimal",
+          "description": "No significant false claims detected in AI responses",
+          "status": "excellent"
+        },
+        {
+          "title": "Brand association strong",
+          "description": "Clear association with core business values in AI context",
+          "status": "excellent"
+        }
+      ],
+      "issues": [],
+      "recommendations": [
+        {
+          "title": "Maintain content quality",
+          "description": "Continue current content standards to preserve brand safety",
+          "priority": "medium",
+          "estimatedImpact": "Sustained brand trust"
+        }
+      ]
+    },
+    {
+      "id": "recommendations-engine",
+      "name": "Recommendations Engine",
+      "description": "Prioritized action items and implementation roadmap",
+      "icon": "Lightbulb",
+      "score": {
+        "score": 73,
+        "trend": "up",
+        "lastWeekChange": 4,
+        "status": "good"
+      },
+      "keyInsights": [
+        {
+          "title": "Quick wins identified",
+          "description": "8 high-impact, low-effort improvements available",
+          "status": "good"
+        },
+        {
+          "title": "Strategic opportunities",
+          "description": "3 major initiatives could increase visibility 40%+",
+          "status": "good"
+        },
+        {
+          "title": "Implementation roadmap ready",
+          "description": "Prioritized 90-day and 6-month action plans available",
+          "status": "excellent"
+        }
+      ],
+      "issues": [
+        {
+          "title": "Resource constraints noted",
+          "severity": "medium",
+          "description": "Major initiatives require content team scaling"
+        }
+      ],
+      "recommendations": [
+        {
+          "title": "Execute quick wins first",
+          "description": "Implement 4-week sprint on high-impact, low-effort items",
+          "priority": "high",
+          "estimatedImpact": "+12% visibility in 30 days"
+        },
+        {
+          "title": "Plan strategic initiatives",
+          "description": "Build 6-month roadmap for major content and technical initiatives",
+          "priority": "high",
+          "estimatedImpact": "+40% visibility in 6 months"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "brands": [
+    {
+      "id": "brand-1",
+      "name": "TechFlow Inc.",
+      "domain": "techflow.io",
+      "description": "Enterprise SaaS platform for workflow automation",
+      "industry": "Software",
+      "targetAudience": "Enterprise teams",
+      "lastAuditDate": "2025-01-15T10:30:00Z"
+    },
+    {
+      "id": "brand-2",
+      "name": "GreenVenture",
+      "domain": "greenventure.com",
+      "description": "Sustainable technology consulting",
+      "industry": "Consulting",
+      "targetAudience": "Mid-market businesses",
+      "lastAuditDate": "2025-01-10T14:20:00Z"
+    },
+    {
+      "id": "brand-3",
+      "name": "DataMind Labs",
+      "domain": "datamind-labs.io",
+      "description": "AI-powered analytics platform",
+      "industry": "Analytics",
+      "targetAudience": "Data teams",
+      "lastAuditDate": "2025-01-20T09:15:00Z"
+    }
+  ]
+}
