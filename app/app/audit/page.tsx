@@ -1,23 +1,51 @@
 "use client"
 
-import { useState } from "react"
+import { useReducer, useMemo } from "react"
 import { useSearchParams } from "next/navigation"
 import { DashboardHeader } from "@/components/dashboard-header"
 import { Card } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { getBrands, getOverallAudit, getModuleById } from "@/lib/audit-data"
+import { getBrands, getOverallAudit, getModuleById, getAuditModules } from "@/lib/audit-data"
 import { AlertCircle, CheckCircle2, AlertTriangle, Lightbulb, TrendingUp } from "lucide-react"
+
+type AuditState = {
+  selectedBrandId: string
+  selectedModuleId: string
+}
+
+type AuditAction = { type: "SET_BRAND"; payload: string } | { type: "SET_MODULE"; payload: string }
+
+function auditReducer(state: AuditState, action: AuditAction): AuditState {
+  switch (action.type) {
+    case "SET_BRAND":
+      return { ...state, selectedBrandId: action.payload }
+    case "SET_MODULE":
+      return { ...state, selectedModuleId: action.payload }
+    default:
+      return state
+  }
+}
 
 export default function AuditPage() {
   const brands = getBrands()
+  const modules = getAuditModules()
   const searchParams = useSearchParams()
-  const [selectedBrandId, setSelectedBrandId] = useState(brands[0].id)
 
-  const selectedBrand = brands.find((b) => b.id === selectedBrandId)!
-  const audit = getOverallAudit(selectedBrandId)
+  const initialModuleId = searchParams.get("module") || modules[0]?.id || ""
 
-  const moduleId = searchParams.get("module") || audit.modules[0].id
-  const selectedModule = getModuleById(moduleId)
+  const [state, dispatch] = useReducer(auditReducer, {
+    selectedBrandId: brands[0]?.id || "",
+    selectedModuleId: initialModuleId,
+  })
+
+  const selectedBrand = useMemo(
+    () => brands.find((b) => b.id === state.selectedBrandId)!,
+    [brands, state.selectedBrandId],
+  )
+
+  const audit = useMemo(() => getOverallAudit(state.selectedBrandId), [state.selectedBrandId])
+
+  const selectedModule = useMemo(() => getModuleById(state.selectedModuleId), [state.selectedModuleId])
 
   if (!selectedModule) {
     return <div>Module not found</div>
@@ -35,12 +63,16 @@ export default function AuditPage() {
     critical: "bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300",
     high: "bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300",
     medium: "bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300",
-    low: "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300",
+    low: "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-200",
   }
 
   return (
     <div className="space-y-6 animate-in fade-in duration-300">
-      <DashboardHeader brands={brands} selectedBrand={selectedBrand} onBrandChange={setSelectedBrandId} />
+      <DashboardHeader
+        brands={brands}
+        selectedBrand={selectedBrand}
+        onBrandChange={(brandId) => dispatch({ type: "SET_BRAND", payload: brandId })}
+      />
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         {/* Module Selector - Sidebar */}
@@ -48,21 +80,23 @@ export default function AuditPage() {
           <div className="sticky top-24">
             <h3 className="text-sm font-semibold mb-3 text-muted-foreground uppercase tracking-wide">Modules</h3>
             <div className="space-y-2">
-              {audit.modules.map((module) => (
-                <a
+              {modules.map((module) => (
+                <button
                   key={module.id}
-                  href={`?module=${module.id}`}
-                  className={`block p-3 rounded-lg transition border-2 ${
-                    moduleId === module.id
+                  onClick={() => dispatch({ type: "SET_MODULE", payload: module.id })}
+                  className={`w-full text-left p-3 rounded-lg transition border-2 ${
+                    state.selectedModuleId === module.id
                       ? "bg-primary text-primary-foreground border-primary shadow-md"
                       : "bg-card border-border hover:border-primary text-foreground cursor-pointer"
                   }`}
                 >
                   <p className="text-sm font-medium">{module.name}</p>
-                  <p className={`text-xs mt-1 ${moduleId === module.id ? "opacity-90" : "text-muted-foreground"}`}>
+                  <p
+                    className={`text-xs mt-1 ${state.selectedModuleId === module.id ? "opacity-90" : "text-muted-foreground"}`}
+                  >
                     Score: {module.score.score}
                   </p>
-                </a>
+                </button>
               ))}
             </div>
           </div>

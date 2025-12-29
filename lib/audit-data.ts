@@ -3,7 +3,7 @@ import modulesData from "@/data/audit-modules.json"
 import type { Brand, AuditModule, OverallAudit } from "@/types/audit"
 
 export function getBrands(): Brand[] {
-  return brandData.brands.map((b: any) => ({
+  return brandData.brands.map((b: Brand) => ({
     ...b,
     lastAuditDate: new Date(b.lastAuditDate),
   }))

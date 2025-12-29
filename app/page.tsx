@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import Link from "next/link"
-import { ArrowRight, Zap, Brain, BarChart3, CheckCircle2 } from "lucide-react"
+import { ArrowRight, Zap, Brain, BarChart3, CheckCircle2, Database, GitBranch, Sparkles } from "lucide-react"
 
 export default function Home() {
   const modules = [
@@ -62,7 +62,51 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ... existing sections ... */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary/5 border-y border-border">
+          <div className="max-w-7xl mx-auto">
+            <div className="mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">How AI Search Retrieval Works</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl">
+                Traditional SEO optimizes for Googlebot's link-based ranking. AI-SEO optimizes for how LLMs fetch,
+                understand, and cite information.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card className="p-6 border-2 border-primary/20 hover:border-primary hover:shadow-lg transition">
+                <Database className="h-8 w-8 text-primary mb-4" />
+                <h3 className="font-semibold text-lg mb-3">Vector Embeddings & RAG</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  LLMs don't crawl links—they convert content into high-dimensional vectors, then perform semantic
+                  similarity search. Retrieval-Augmented Generation (RAG) fetches the most semantically relevant sources
+                  from your site to ground responses. Content clarity and semantic coherence matter more than keyword
+                  density.
+                </p>
+              </Card>
+
+              <Card className="p-6 border-2 border-accent/20 hover:border-accent hover:shadow-lg transition">
+                <Sparkles className="h-8 w-8 text-accent mb-4" />
+                <h3 className="font-semibold text-lg mb-3">Zero-Click AI Responses</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  ChatGPT, Gemini, and Perplexity generate direct answers without sending traffic. Your brand's presence
+                  depends on being cited and ranked by the LLM's retrieval system. Citation rate and semantic relevance
+                  are your new visibility metrics, replacing traditional click-through rate optimization.
+                </p>
+              </Card>
+
+              <Card className="p-6 border-2 border-blue-200/50 hover:border-blue-300 hover:shadow-lg transition dark:border-blue-900/50 dark:hover:border-blue-800">
+                <GitBranch className="h-8 w-8 text-blue-600 dark:text-blue-400 mb-4" />
+                <h3 className="font-semibold text-lg mb-3">Entity & Intent Extraction</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  LLMs parse content for named entities, relationships, and user intent patterns. Your brand's knowledge
+                  graph—how entities (people, products, concepts) relate and connect—directly influences citation
+                  likelihood. Well-structured, entity-rich content ranks higher in AI contexts.
+                </p>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
