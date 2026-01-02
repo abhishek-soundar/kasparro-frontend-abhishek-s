@@ -1,296 +1,176 @@
-# Kasparro - AI-Native SEO & Brand Intelligence Platform
+# Kasparro: AI-Native Brand & SEO Intelligence Platform
 
-A sophisticated, enterprise-grade SaaS platform for comprehensive SEO audits, brand visibility analysis, and strategic keyword intelligence. Built with cutting-edge web technologies and designed with a professional, data-focused interface.
+> Optimize your brand for the AI-first search era—understand how you appear to ChatGPT, Gemini, and Perplexity.
 
-Live Deployment:https://kasparro-frontend-abhishek-s-vercel.vercel.app/
+## Overview
 
-![Kasparro Platform](https://via.placeholder.com/1200x630?text=Kasparro+AI-SEO+Platform)
+Kasparro is a purpose-built platform for measuring and improving brand visibility across AI search engines. It evaluates your content through 7 specialized audit modules, each designed to assess AI-specific ranking factors like semantic coherence, entity clarity, and LLM retrievability.
 
 ## Features
 
-- **Comprehensive SEO Audits** - 7 specialized audit modules analyzing different aspects of your digital presence
-- **AI-Powered Insights** - Machine learning-driven recommendations and actionable intelligence
-- **Brand Visibility Tracking** - Monitor your AI Visibility, Trust/EEAT scores, and keyword coverage
-- **Architecture Insights** - Understand your website's technical structure and optimization opportunities
-- **Real-Time Analytics** - Dashboard with live metrics and trend indicators
-- **Dark/Light Mode Toggle** - Professional theme switching with persistent user preference
-- **Responsive Design** - Fully optimized for desktop, tablet, and mobile devices
-- **Professional UI Components** - Enterprise-grade components with smooth animations and interactions
+- **7 Core Audit Modules**: Comprehensive analysis of content intelligence, visibility, EEAT scoring, keyword coverage, competitive landscape, brand safety, and recommendations
+- **AI-First Metrics**: Track visibility across ChatGPT, Gemini, Perplexity, and emerging AI platforms
+- **Semantic Analysis**: Evaluate content clarity, entity relationships, and LLM retrievability
+- **Actionable Recommendations**: Prioritized optimization suggestions with estimated impact
+- **Dark/Light Mode**: Full theme support for optimal viewing in any environment
+
+## Architecture
+
+Kasparro uses an 8-layer pipeline:
+
+1. **Input Assembler** – Validates brand metadata and domain information
+2. **Context Pack** – Enriches data with semantic and structural analysis
+3. **7 Audit Modules** – Specialized evaluators across different dimensions
+4. **Output Layer** – Generates scores, insights, issues, and recommendations
+5. **Dashboard** – Real-time visualization of audit results
+6. **State Management** – Zustand-backed audit state with memoized selectors
+7. **Theme System** – CSS variables with dark/light mode via next-themes
+8. **Data Layer** – Mock JSON data mirrored after a future API-backed system
 
 ## Tech Stack
 
-### Frontend
-- **Next.js 16** - React framework with App Router
-- **React 19** - Latest React with enhanced hooks
-- **TypeScript** - Type-safe development
-- **Tailwind CSS v4** - Utility-first CSS framework
-- **next-themes** - Dark mode support with persistence
-- **Zustand** - Lightweight state management
-
-### Development Tools
-- **ESLint** - Code quality and consistency
-- **Turbopack** - Fast bundling (default in Next.js 16)
-- **shadcn/ui** - High-quality React components
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript (strict mode)
+- **Styling**: Tailwind CSS v4 with semantic design tokens
+- **State**: Zustand + useReducer patterns
+- **UI Components**: shadcn/ui
+- **Icons**: Lucide React
+- **Theme**: next-themes for dark/light mode
 
 ## Getting Started
 
-### Prerequisites
-- Node.js 18.x or higher
-- npm or yarn package manager
-
 ### Installation
 
-1. **Clone the repository**
-   \`\`\`bash
-   git clone https://github.com/yourusername/kasparro.git
-   cd kasparro
-   \`\`\`
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/kasparro.git
+cd kasparro
 
-2. **Install dependencies**
-   \`\`\`bash
-   npm install
-   \`\`\`
+# Install dependencies
+npm install
 
-3. **Run the development server**
-   \`\`\`bash
-   npm run dev
-   \`\`\`
+# Start development server
+npm run dev
+```
 
-4. **Open in browser**
-   - Navigate to `http://localhost:3000`
-   - The app will automatically reload when you make changes
+Open [http://localhost:3000](http://localhost:3000) to view the platform.
 
-### Build for Production
+### Build & Deploy
 
-\`\`\`bash
+```bash
+# Build for production
 npm run build
+
+# Start production server
 npm start
-\`\`\`
+```
+
+Deploy to Vercel, Netlify, or your preferred hosting platform.
 
 ## Project Structure
 
-\`\`\`
+```
 kasparro/
-├── app/
-│   ├── page.tsx              # Homepage
-│   ├── layout.tsx            # Root layout with theme provider
-│   ├── globals.css           # Global styles and design tokens
-│   ├── platform/
-│   │   └── page.tsx          # Platform features page
-│   ├── about/
-│   │   └── page.tsx          # About page
-│   └── app/                  # Protected dashboard routes
-│       ├── layout.tsx        # Dashboard layout
-│       ├── ClientAppLayout.tsx
-│       ├── dashboard/
-│       │   └── page.tsx      # Dashboard overview
-│       ├── audit/
-│       │   └── page.tsx      # Audit details
-│       └── architecture/
-│           └── page.tsx      # Architecture page
-├── components/
-│   ├── navigation.tsx        # Header navigation
-│   ├── footer.tsx            # Footer component
-│   ├── theme-provider.tsx    # Theme provider setup
-│   ├── theme-toggle.tsx      # Dark/light mode toggle
-│   ├── dashboard-header.tsx  # Dashboard header
-│   ├── score-card.tsx        # Metric score cards
-│   ├── module-card.tsx       # Module grid cards
-│   ├── metric-skeleton.tsx   # Loading skeleton
-│   ├── empty-state.tsx       # Empty state component
-│   └── responsive-grid.tsx   # Responsive grid layout
-├── types/
-│   └── audit.ts             # TypeScript interfaces and types
-├── data/
-│   ├── brands.json          # Mocked brand data
-│   └── audit-modules.json   # Mocked audit modules
-├── lib/
-│   ├── audit-data.ts        # Data utilities
-│   ├── store.ts             # Zustand store
-│   └── utils.ts             # Helper functions
-└── public/
-    └── images/              # Static assets
-\`\`\`
+├── app/                      # Next.js App Router pages
+│   ├── page.tsx             # Homepage
+│   ├── platform/page.tsx    # Platform features & architecture
+│   ├── about/page.tsx       # About page
+│   └── app/                 # Protected dashboard routes
+│       ├── dashboard/       # Main audit dashboard
+│       ├── audit/          # Detailed module insights
+│       └── architecture/   # System architecture page
+├── components/              # React components
+│   ├── ui/                 # shadcn/ui components
+│   ├── navigation.tsx      # Header with theme toggle
+│   ├── footer.tsx          # Footer
+│   ├── score-card.tsx      # Metric display cards
+│   └── module-card.tsx     # Audit module cards
+├── lib/                     # Utilities & helpers
+│   ├── audit-data.ts       # Data fetching functions
+│   └── store.ts            # Zustand state management
+├── types/                   # TypeScript interfaces
+│   └── audit.ts            # Core domain types
+├── data/                    # Mock data (JSON)
+│   ├── brands.json         # Brand catalog
+│   └── audit-modules.json  # Module definitions & scores
+└── styles/                  # Global styles
+    └── globals.css         # Tailwind config & design tokens
+```
 
-## Key Pages
+## Data & API
 
-| Page | Route | Purpose |
-|------|-------|---------|
-| Homepage | `/` | Marketing page, value proposition, and call-to-action |
-| Platform | `/platform` | Detailed product features and AI pipeline visualization |
-| About | `/about` | Company mission, philosophy, and vision |
-| Dashboard | `/app/dashboard` | Key metrics overview and module selection |
-| Audit | `/app/audit` | Detailed audit analysis with insights and recommendations |
-| Architecture | `/app/architecture` | System design explanation and component breakdown |
+### Mock Data Structure
 
-## Dark/Light Mode
+The application uses **JSON-based mock data** that mirrors a future API-backed system. This design allows for seamless transition to a real backend:
 
-The platform features a professional dark/light mode toggle in the navigation header.
+- **`data/brands.json`**: Brands with metadata (domain, industry, target audience)
+- **`data/audit-modules.json`**: 7 audit modules with scores, insights, issues, and recommendations
 
-### Features
-- **Theme Toggle Button** - Sun/Moon icon in the top-right navigation
-- **Persistent Storage** - Your theme preference is saved to localStorage
-- **System Preference Detection** - Defaults to system preference on first visit
-- **Global Application** - Applies instantly across all pages
-- **CSS Variables** - All colors use semantic design tokens for consistent theming
+All data access flows through typed functions in `lib/audit-data.ts`, making it trivial to swap JSON data sources for API calls without changing component logic.
 
-### How to Use
-1. Click the sun/moon icon in the navigation header
-2. Theme switches instantly across all pages
-3. Preference is automatically saved
+### Data Functions
 
-### Customizing Colors
-Edit the CSS variables in `app/globals.css`:
+```typescript
+// Get all brands
+getBrands(): Brand[]
 
-\`\`\`css
-@theme inline {
-  --color-primary: #3B82F6;
-  --color-accent: #06B6D4;
-  --color-background: #FFFFFF;
-  --color-foreground: #1F2937;
-  /* ... more variables */
-}
-\`\`\`
+// Get a specific brand
+getBrandById(id: string): Brand | undefined
 
-## Design System
+// Get all audit modules
+getAuditModules(): AuditModule[]
 
-### Color Palette
-- **Primary**: Deep Indigo (#3B82F6)
-- **Accent**: Cyan (#06B6D4)
-- **Background**: White / Near-Black (#0F172A)
-- **Foreground**: Dark Gray / Light Gray
+// Get a specific module
+getModuleById(id: string): AuditModule | undefined
 
-### Typography
-- **Headings**: Geist Sans (bold, 600-700 weight)
-- **Body**: Geist Sans (regular, 400 weight)
-- **Mono**: Geist Mono (code blocks)
+// Get overall audit for a brand
+getOverallAudit(brandId: string): OverallAudit
+```
 
-### Spacing
-Uses Tailwind's spacing scale: 0, 1, 2, 4, 6, 8, 12, 16, 20, 24, etc.
+## State Management
 
-## Customization
+Dashboard and audit page state is managed via **Zustand + useReducer**:
 
-### Adding New Modules
-1. Update `data/audit-modules.json` with new module data
-2. Import in `lib/audit-data.ts`
-3. Add route in `/app/app/audit`
+```typescript
+// Audit page reducer pattern
+const [state, dispatch] = useReducer(auditReducer, initialState)
 
-### Changing Colors
-1. Open `app/globals.css`
-2. Update CSS variables under `@theme inline`
-3. Changes apply globally
+// Actions
+dispatch({ type: 'SET_BRAND', payload: brandId })
+dispatch({ type: 'SET_MODULE', payload: moduleId })
+```
 
-### Modifying Layout
-- Edit component files in `/components`
-- Use Tailwind classes for styling
-- Maintain responsive breakpoints: `md:` (768px), `lg:` (1024px)
+Memoized selectors prevent unnecessary re-renders and provide clean component interfaces.
 
-## Performance Optimizations
+## Styling & Theme
 
-- **Code Splitting** - Automatic with Next.js
-- **Image Optimization** - next/image for responsive images
-- **CSS Purging** - Tailwind removes unused styles
-- **State Management** - Zustand for efficient state updates
-- **Component Memoization** - Prevents unnecessary re-renders
+The design system uses **semantic CSS variables** defined in `app/globals.css`:
 
-## Browser Support
+```css
+--primary: Deep indigo (#4F46E5)
+--accent: Cyan (#06B6D4)
+--background: White / Near-black (dark mode)
+--foreground: Near-black / White (dark mode)
+```
 
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Mobile browsers (iOS Safari, Chrome Android)
+Toggle dark/light mode via the sun/moon icon in the navigation header.
 
-## Deployment
+## Contributing
 
-### Deploy to Vercel (Recommended)
-
-1. Push code to GitHub
-2. Go to [vercel.com](https://vercel.com)
-3. Connect your repository
-4. Click "Deploy"
-5. Vercel automatically builds and deploys on every push
-
-### Deploy to Other Platforms
-
-The project is a standard Next.js app and can be deployed to:
-- AWS Amplify
-- Netlify
-- Railway
-- Render
-- Any Node.js hosting
-
-## Development Workflow
-
-### Code Style
-- Use TypeScript for type safety
-- Follow Tailwind utility-first CSS
-- Keep components small and focused
-- Use semantic HTML elements
-
-### Git Workflow
-\`\`\`bash
-git checkout -b feature/your-feature
-# Make changes
-npm run build  # Verify build succeeds
-git commit -m "feat: add your feature"
-git push origin feature/your-feature
-\`\`\`
-
-## Troubleshooting
-
-### Port 3000 Already in Use
-\`\`\`bash
-npm run dev -- -p 3001
-\`\`\`
-
-### Dark Mode Not Working
-- Clear browser cache (Ctrl+Shift+Delete)
-- Restart dev server (Ctrl+C, then npm run dev)
-- Check browser console for errors (F12)
-
-### Build Errors
-\`\`\`bash
-rm -rf .next node_modules
-npm install
-npm run build
-\`\`\`
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Commit changes with clear messages
+4. Push to the branch
+5. Open a pull request
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+MIT License – See LICENSE file for details
 
-## Support
+## Questions?
 
-For issues, questions, or feature requests:
-- Open an issue on GitHub
-- Check existing documentation
-- Review the codebase structure above
-
-## Acknowledgments
-
-- Built with Next.js, React, and Tailwind CSS
-- Icons from modern icon libraries
-- Inspired by enterprise SaaS platforms
-- Design system principles from leading design systems
+For issues, questions, or feedback, please open a GitHub issue or reach out to the team.
 
 ---
 
-**Made with ❤️ by the Kasparro Team**
-
-Happy auditing! 🚀
-\`\`\`
-
-Here's your polished README.md! It includes:
-
-- **Clear project description** - What Kasparro does and why it matters
-- **Comprehensive features list** - Including the dark/light mode toggle
-- **Tech stack** - All technologies used
-- **Step-by-step installation** - Easy for anyone to get started
-- **Complete project structure** - Shows folder organization
-- **Key pages table** - Quick reference for all routes
-- **Dark/Light mode documentation** - How to use and customize
-- **Design system details** - Colors, typography, spacing
-- **Deployment instructions** - Multiple platform options
-- **Troubleshooting section** - Common issues and solutions
-
-Simply copy the entire markdown block above and paste it into your GitHub repo as `README.md`. It's professional, comprehensive, and ready for production!
+**Built with ❤️ for AI-native brands optimizing the future of search.**

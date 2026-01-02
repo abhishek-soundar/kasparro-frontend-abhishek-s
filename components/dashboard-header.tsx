@@ -1,6 +1,8 @@
 "use client"
+
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import type { Brand } from "@/types/audit"
+import type { JSX } from "react"
 
 interface DashboardHeaderProps {
   brands: Brand[]
@@ -8,7 +10,7 @@ interface DashboardHeaderProps {
   onBrandChange: (brandId: string) => void
 }
 
-export function DashboardHeader({ brands, selectedBrand, onBrandChange }: DashboardHeaderProps) {
+export function DashboardHeader({ brands, selectedBrand, onBrandChange }: DashboardHeaderProps): JSX.Element {
   return (
     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
       <div>

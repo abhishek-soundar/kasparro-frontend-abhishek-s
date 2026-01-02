@@ -1,3 +1,8 @@
+export type AuditStatus = "excellent" | "good" | "fair" | "poor"
+export type TrendDirection = "up" | "down" | "stable"
+export type IssueSeverity = "critical" | "high" | "medium" | "low"
+export type RecommendationPriority = "critical" | "high" | "medium" | "low"
+
 export interface Brand {
   id: string
   name: string
@@ -10,15 +15,15 @@ export interface Brand {
 
 export interface AuditScore {
   score: number
-  trend: "up" | "down" | "stable"
+  trend: TrendDirection
   lastWeekChange: number
-  status: "excellent" | "good" | "fair" | "poor"
+  status: AuditStatus
 }
 
 export interface ModuleInsight {
   title: string
   description: string
-  status: "excellent" | "good" | "fair" | "poor"
+  status: AuditStatus
 }
 
 export interface AuditModule {
@@ -30,13 +35,13 @@ export interface AuditModule {
   keyInsights: ModuleInsight[]
   issues: {
     title: string
-    severity: "critical" | "high" | "medium" | "low"
+    severity: IssueSeverity
     description: string
   }[]
   recommendations: {
     title: string
     description: string
-    priority: "critical" | "high" | "medium" | "low"
+    priority: RecommendationPriority
     estimatedImpact: string
   }[]
 }

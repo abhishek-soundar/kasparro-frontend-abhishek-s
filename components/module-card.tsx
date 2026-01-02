@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Card } from "@/components/ui/card"
-import type { AuditModule } from "@/types/audit"
+import type { AuditModule, AuditStatus } from "@/types/audit"
 
 interface ModuleCardProps {
   module: AuditModule
@@ -10,14 +10,14 @@ interface ModuleCardProps {
 }
 
 export function ModuleCard({ module, isSelected }: ModuleCardProps) {
-  const statusColors = {
+  const statusColors: Record<AuditStatus, string> = {
     excellent: "border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-900/20",
     good: "border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900/20",
     fair: "border-yellow-200 dark:border-yellow-800 bg-yellow-50 dark:bg-yellow-900/20",
     poor: "border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20",
   }
 
-  const statusTextColors = {
+  const statusTextColors: Record<AuditStatus, string> = {
     excellent: "text-green-700 dark:text-green-300",
     good: "text-blue-700 dark:text-blue-300",
     fair: "text-yellow-700 dark:text-yellow-300",

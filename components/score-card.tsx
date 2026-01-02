@@ -1,6 +1,8 @@
+"use client"
+
 import { Card } from "@/components/ui/card"
 import { TrendingDown, TrendingUp } from "lucide-react"
-import type { AuditScore } from "@/types/audit"
+import type { AuditScore, AuditStatus } from "@/types/audit"
 
 interface ScoreCardProps {
   label: string
@@ -8,14 +10,14 @@ interface ScoreCardProps {
 }
 
 export function ScoreCard({ label, score }: ScoreCardProps) {
-  const statusColors = {
+  const statusColors: Record<AuditStatus, string> = {
     excellent: "text-green-600 dark:text-green-400",
     good: "text-blue-600 dark:text-blue-400",
     fair: "text-yellow-600 dark:text-yellow-400",
     poor: "text-red-600 dark:text-red-400",
   }
 
-  const bgColors = {
+  const bgColors: Record<AuditStatus, string> = {
     excellent: "bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800",
     good: "bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800",
     fair: "bg-yellow-50 dark:bg-yellow-900/20 border-yellow-200 dark:border-yellow-800",

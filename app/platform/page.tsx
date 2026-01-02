@@ -145,6 +145,78 @@ export default function Platform() {
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold mb-12">How We Differ</h2>
+
+            <div className="mb-16 p-8 bg-card border-2 border-primary/30 rounded-xl">
+              <h3 className="text-2xl font-semibold mb-6">Concrete Example: LLM Retrieval vs. Keyword Ranking</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="font-semibold text-primary mb-3">Traditional SEO (Ahrefs, SEMrush)</h4>
+                  <div className="bg-muted p-4 rounded-lg border border-border space-y-2 text-sm">
+                    <p>
+                      <strong>Query:</strong> "best project management tools"
+                    </p>
+                    <p>
+                      <strong>Ranking Factor:</strong> Backlinks, keyword density, domain authority
+                    </p>
+                    <p>
+                      <strong>Your Goal:</strong> Rank #1 for this keyword to capture CTR
+                    </p>
+                    <p className="text-muted-foreground mt-3">
+                      You optimize title tags, headers, and link profile. Google's crawler crawls your site, indexes
+                      keyword patterns, and ranks based on link signals.
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-accent mb-3">AI-SEO (Kasparro)</h4>
+                  <div className="bg-muted p-4 rounded-lg border border-border space-y-2 text-sm">
+                    <p>
+                      <strong>Query:</strong> "best project management tools" (asked in ChatGPT)
+                    </p>
+                    <p>
+                      <strong>Retrieval Factor:</strong> Semantic embeddings, citation density, entity relationships
+                    </p>
+                    <p>
+                      <strong>Your Goal:</strong> Get cited in the AI-generated response (no CTR needed)
+                    </p>
+                    <p className="text-muted-foreground mt-3">
+                      ChatGPT converts your content into vector embeddings, performs semantic similarity search via RAG,
+                      and ranks sources by coherence and authority. Only cited sources appear.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mb-16 p-8 bg-card border-2 border-accent/30 rounded-xl">
+              <h3 className="text-2xl font-semibold mb-6">Concrete Example: Entity Clarity in AI Context</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="font-semibold text-primary mb-3">Generic Content (Low AI Visibility)</h4>
+                  <div className="bg-muted p-4 rounded-lg border border-border space-y-3 text-sm font-mono">
+                    <p>"We provide solutions for teams looking to improve productivity with modern tools."</p>
+                    <p className="text-muted-foreground text-xs">
+                      Problem: No named entities (no product names, people, or relationships). LLM can't extract meaning
+                      or build knowledge graph connections.
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-accent mb-3">Structured Content (High AI Visibility)</h4>
+                  <div className="bg-muted p-4 rounded-lg border border-border space-y-3 text-sm font-mono">
+                    <p>
+                      "Asana integrates with Slack, Jira, and Microsoft Teams, used by 140,000+ teams at Google, Uber,
+                      and Nike for OKR tracking."
+                    </p>
+                    <p className="text-muted-foreground text-xs">
+                      Advantage: Named entities (Asana, Slack, Jira, Uber, etc.) enable LLMs to understand relationships
+                      and cite your content in AI responses about project management.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
