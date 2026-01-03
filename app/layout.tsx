@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   title: "Kasparro - AI-Native SEO & Brand Intelligence",
   description: "AI-first search engine optimization and brand intelligence platform for the AI era",
   generator: "v0.app",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+  },
   icons: {
     icon: [
       {
@@ -38,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`font-sans antialiased`}>
+      <body className={`font-sans antialiased overflow-x-hidden`}>
         <ThemeProvider>{children}</ThemeProvider>
         <Analytics />
       </body>
