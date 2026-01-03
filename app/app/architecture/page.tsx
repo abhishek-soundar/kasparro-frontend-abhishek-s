@@ -4,7 +4,7 @@ import { ArrowDown, Database, Zap, BarChart3, Settings } from "lucide-react"
 
 export default function ArchitecturePage() {
   return (
-    <div>
+    <div className="ml-0 lg:ml-16 px-4 sm:px-6">
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-2">System Architecture</h1>
         <p className="text-muted-foreground">
@@ -13,16 +13,23 @@ export default function ArchitecturePage() {
       </div>
 
       <Tabs defaultValue="flow" className="w-full">
-        <TabsList className="grid w-full grid-cols-3">
-          <TabsTrigger value="flow">Data Flow</TabsTrigger>
-          <TabsTrigger value="components">Components</TabsTrigger>
-          <TabsTrigger value="modules">Module Breakdown</TabsTrigger>
-        </TabsList>
+        <div className="overflow-x-auto">
+          <TabsList className="flex w-max min-w-full gap-2">
+            <TabsTrigger value="flow" className="text-xs sm:text-sm whitespace-nowrap">
+              Data Flow
+            </TabsTrigger>
+            <TabsTrigger value="components" className="text-xs sm:text-sm whitespace-nowrap">
+              Components
+            </TabsTrigger>
+            <TabsTrigger value="modules" className="text-xs sm:text-sm whitespace-nowrap">
+              Module Breakdown
+            </TabsTrigger>
+          </TabsList>
+        </div>
 
         {/* Data Flow */}
         <TabsContent value="flow" className="mt-8">
           <div className="space-y-6">
-            {/* Input Assembler */}
             <Card className="p-8 bg-gradient-to-r from-primary/5 to-transparent border-primary/20">
               <div className="flex items-start gap-4">
                 <Database className="h-8 w-8 text-primary flex-shrink-0 mt-0.5" />
@@ -49,7 +56,6 @@ export default function ArchitecturePage() {
               <ArrowDown className="h-6 w-6 text-muted-foreground" />
             </div>
 
-            {/* Context Pack */}
             <Card className="p-8 bg-gradient-to-r from-accent/5 to-transparent border-accent/20">
               <div className="flex items-start gap-4">
                 <Zap className="h-8 w-8 text-accent flex-shrink-0 mt-0.5" />
@@ -79,7 +85,6 @@ export default function ArchitecturePage() {
               <ArrowDown className="h-6 w-6 text-muted-foreground" />
             </div>
 
-            {/* Modules */}
             <Card className="p-8">
               <h2 className="text-xl font-bold mb-6">3. Audit Modules (Parallel Processing)</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -104,7 +109,6 @@ export default function ArchitecturePage() {
               <ArrowDown className="h-6 w-6 text-muted-foreground" />
             </div>
 
-            {/* Output */}
             <Card className="p-8 bg-gradient-to-r from-primary/5 to-transparent border-primary/20">
               <div className="flex items-start gap-4">
                 <Settings className="h-8 w-8 text-primary flex-shrink-0 mt-0.5" />
